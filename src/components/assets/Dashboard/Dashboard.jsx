@@ -1,5 +1,7 @@
-import React from 'react';
+
 import './Dashboard.css'; // Import ng CSS file
+import React, { useState } from 'react'; // ✅ Idagdag ang { useState } sa curly braces
+// ...
 
 // --- HELPER COMPONENTS (Ihiwalay mo ito sa kani-kanilang file kapag lumaki ang project) ---
 
@@ -21,26 +23,93 @@ const Header = () => (
     </header>
 );
 
-// 2. FilterBar Component
+
+
+// ...
 const FilterBar = () => {
-    const filters = [
-        { label: 'Institute', value: 'College of Engineering' },
-        { label: 'Year Level', value: '1st Year' },
-        { label: 'Section', value: 'All Sections' },
+    // State para i-track ang kasalukuyang pinili (Para gumana ang dropdown)
+    const [institute, setInstitute] = useState('College of Engineering');
+    const [yearLevel, setYearLevel] = useState('1st Year');
+    const [section, setSection] = useState('All Sections');
+
+    // Options Arrays (Para sa mga choices)
+    const instituteOptions = [
+        { label: 'Institute of Computer Studies', value: 'College of Computer' },
+        { label: 'Institute of Education', value: 'College of Education' },
+        { label: 'Institute of Business', value: 'College of Business' },
     ];
+    
+    const yearLevelOptions = [
+        { label: '1st Year', value: '1st Year' },
+        { label: '2nd Year', value: '2nd Year' },
+        { label: '3rd Year', value: '3rd Year' },
+        { label: '4th Year', value: '4th Year' },
+    ];
+    
+    const sectionOptions = [
+        { label: 'All Sections', value: 'All Sections' },
+        { label: 'Section A', value: 'Section A' },
+        { label: 'Section B', value: 'Section B' },
+        { label: 'Section C', value: 'Section C' },
+        { label: 'Section D', value: 'Section D' },
+        // ... iba pang sections
+    ];
+
     return (
         <section className="filters-section">
-            {filters.map((filter, index) => (
-                <div className="filter-group" key={index}>
-                    <label>{filter.label}</label>
-                    <select value={filter.value} readOnly>
-                        <option>{filter.value}</option>
-                    </select>
-                </div>
-            ))}
+            
+            {/* 1. INSTITUTE DROPDOWN */}
+            <div className="filter-group">
+                <label>Institute</label>
+                <select 
+                    value={institute} // Naka-link sa state
+                    onChange={(e) => setInstitute(e.target.value)} // Ina-update ang state
+                >
+                    {/* Gumamit ng .map para i-render ang CHOICES */}
+                    {instituteOptions.map((option, index) => (
+                        <option key={index} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {/* 2. YEAR LEVEL DROPDOWN */}
+            <div className="filter-group">
+                <label>Year Level</label>
+                <select
+                    value={yearLevel}
+                    onChange={(e) => setYearLevel(e.target.value)}
+                >
+                    {yearLevelOptions.map((option, index) => (
+                        <option key={index} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {/* 3. SECTION DROPDOWN */}
+            <div className="filter-group">
+                <label>Section</label>
+                <select
+                    value={section}
+                    onChange={(e) => setSection(e.target.value)}
+                >
+                    {/* NOTE: Palitan ang sectionLevelOptions ng sectionOptions */}
+                    {sectionOptions.map((option, index) => (
+                        <option key={index} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
         </section>
     );
 };
+
+// Siguraduhin na i-export ito para magamit sa Dashboard.jsx
+
 
 // 3. ClassCard Component
 const ClassCard = ({ title, subtitle, color, icon }) => (
