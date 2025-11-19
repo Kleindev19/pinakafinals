@@ -41,7 +41,7 @@
     /* Ang kulay ng form card (parang light beige) */
     background-color: rgba(240, 240, 230, 0.9); 
     padding: 2.5rem 3rem;
-    border-radius: 20px; /* Para mas rounded ang kanto */
+    border-radius: 20px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 400px; /* Lapad ng form card */
@@ -74,7 +74,7 @@ p {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Mahalaga ito */
+    box-sizing: border-box; 
     font-size: 1rem;
 }
 
@@ -94,7 +94,7 @@ p {
 .login-btn {
     width: 100%;
     padding: 0.8rem;
-    background-color: #38761d; /* Dark Green */
+    background-color: #38761d; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -161,7 +161,7 @@ p {
 }
 
 .signup-area a {
-    color: #007bff; /* Kulay asul para sa link */
+    color: #007bff; 
     text-decoration: none;
     font-weight: bold;
 }
