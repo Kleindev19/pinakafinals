@@ -51,7 +51,7 @@ const STATS_DATA = [
     { icon: LayoutDashboard, color: '#F97316', value: '7', label: 'Active Sections', change: '+8%', changeType: '#10B981', changeBg: '#D1FAE5', changeIcon: ArrowUp },
 ];
 
-const INSTITUTE_OPTIONS = ['Select Institute', 'College of Engineering', 'Institute of Computer Studies', 'College of Arts and Sciences'];
+const INSTITUTE_OPTIONS = ['Select Institute', 'Institute of Business', 'Institute of Computer Studies', 'Institute of Education'];
 const YEAR_LEVEL_OPTIONS = ['Select Year Level', '1st Year', '2nd Year', '3rd Year', '4th Year'];
 const SECTION_OPTIONS = ['Select Section', 'All Sections', 'Section A', 'Section B', 'Section C'];
 
