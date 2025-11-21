@@ -12,11 +12,11 @@
 /* 2. Main Content Container */
 .container {
     position: relative; 
-    display:flex; /* Gagamitin para ayusin ang logo at form */
-    justify-content: center; /* I-center ang mga laman (logo area at form) */
+    display:flex; 
+    justify-content: center; 
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Limitahan ang lapad ng buong area */
+    max-width: 1200px; 
     height: 50vh;
 }
 
@@ -25,14 +25,13 @@
     /* Absolute position para lumutang ang logo sa background at nasa kaliwa ng form */
     position: absolute;
     top: 50%;
-    /* I-adjust ang LEFT value para ilipat ang logo */
-    left: 5%; /* Ilagay sa kaliwang bahagi */
+    left: 5%; 
     transform: translateY(-50%); 
     z-index: 10;
 }
 
 .logo-image {
-    width: 350px; /* I-adjust ang laki ng logo base sa screenshot */
+    width: 350px; 
     height: auto;
 }
 
@@ -44,8 +43,8 @@
     border-radius: 20px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px; /* Lapad ng form card */
-    margin-left: auto; /* Itulak sa kanan (kung nasa flex container) */
+    max-width: 400px; /* sa kapal ng form card to */
+    margin-left: auto; /* ilalagay to sa kanan haha (kung nasa flex container) */
     z-index: 20;
 }
 
